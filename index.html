@@ -181,24 +181,89 @@
 
         </form>
 
+
         <section id="states">
             <h2>F5 · State and Recovery Specimen</h2>
-            <p>Document default, focus, required, valid, invalid, disabled, and a static server-returned error. Keep this section separate from the primary blank form when necessary to avoid misleading users.</p>
-            <div class="error-summary">
-                <h3>There is a problem with the fictional submission</h3>
-                <p><a href="#error-example">Email address needs attention</a></p>
+
+            <p>
+                These examples show how the volunteer registration form handles different input states. All examples use fictional information.
+            </p>
+
+            <div class="field">
+                <label for="state-default">Default state</label>
+                <input type="text" id="state-default" placeholder="Enter your name">
+                <p class="help">
+                    An empty field before the user enters information.
+                </p>
             </div>
+
+            <div class="field">
+                <label for="state-focus">Focus state</label>
+                <input type="text" id="state-focus" placeholder="Select this field">
+                <p class="help">
+                    The field displays a visible outline when selected using the keyboard.
+                </p>
+            </div>
+
+            <div class="field">
+                <label for="state-required">
+            Required state (required)
+        </label>
+                <input type="text" id="state-required" required>
+                <p class="help">
+                    This field must be completed before submission.
+                </p>
+            </div>
+
+            <div class="field">
+                <label for="state-valid">Valid state</label>
+                <input type="email" id="state-valid" value="alex@example.com" readonly>
+                <p class="help">
+                    Valid example: Email follows the expected format.
+                </p>
+            </div>
+
+            <div class="field field-error">
+                <label for="state-invalid">Invalid state</label>
+                <input type="email" id="state-invalid" value="alex.example" aria-invalid="true" aria-describedby="invalid-message">
+                <p id="invalid-message">
+                    <strong>Error:</strong> Enter a valid email address, such as alex@example.com.
+                </p>
+            </div>
+
+            <div class="field">
+                <label for="state-disabled">Disabled state</label>
+                <input type="text" id="state-disabled" value="Unavailable for editing" disabled>
+                <p class="help">
+                    This field cannot be edited or selected.
+                </p>
+            </div>
+
+            <h3>Static Server-Returned Error Example</h3>
+
+            <p>
+                This is a demonstration of an error that might be returned after a submission. No actual server or data collection is connected.
+            </p>
+
+            <div class="error-summary" role="alert">
+                <h4>There is a problem with the fictional submission</h4>
+                <p>
+                    <a href="#error-example">
+                Email address needs attention
+            </a>
+                </p>
+            </div>
+
             <div class="field field-error">
                 <label for="error-example">Email address</label>
-                <input id="error-example" type="email" value="alex.example" aria-invalid="true" aria-describedby="error-message">
-                <p id="error-message"><strong>Error:</strong> Enter an address in the format name@example.com.</p>
+                <input type="email" id="error-example" value="alex.example" aria-invalid="true" aria-describedby="error-message">
+                <p id="error-message">
+                    <strong>Error:</strong> The email address could not be accepted. Check the address and enter it in the format name@example.com.
+                </p>
             </div>
-            <button type="button" disabled>Disabled example</button>
+
         </section>
-        <section id="documentation">
-            <h2>F2 and F6 · Planning and Evidence</h2>
-            <p>Link your field inventory, state matrix, fictional test-data list, completed test record, and AI disclosure.</p>
-        </section>
+
     </main>
 </body>
 
