@@ -36,33 +36,151 @@
                 Privacy Notice: This form is a school project and does not collect or store information. Only fictional information should be used when testing the form.
             </p>
         </section>
-        <form action="" method="get">
+        <!-- F4: Requirements and Validation -->
+        <section id="requirements">
+            <h2>F4 · Requirements and Validation</h2>
+            <p>
+                Complete all required fields before submitting. Enter a valid email address, select an event date, and choose your volunteer preferences. Hours available must be a whole number between 1 and 8. Additional comments are optional and limited to 240 characters.
+            </p>
+        </section>
+
+        <!-- F3: Semantic Volunteer Registration Form -->
+        <form action="#" method="post">
+
             <fieldset>
-                <legend>F3 · Contact information</legend>
-                <p class="help">Replace or extend this group based on your justified field inventory.</p>
+                <legend>F3 · Contact Information</legend>
+                <p class="help">
+                    Use fictional information only. All fields in this section are required.
+                </p>
+
                 <div class="field">
-                    <label for="name">Name</label>
-                    <input id="name" name="name" type="text" autocomplete="name">
+                    <label for="full_name">Full name (required)</label>
+                    <input type="text" id="full_name" name="full_name" autocomplete="name" placeholder="Example: Alex Smith" required>
                 </div>
+
                 <div class="field">
                     <label for="email">Email address (required)</label>
-                    <input id="email" name="email" type="email" autocomplete="email" required>
+                    <input type="email" id="email" name="email" autocomplete="email" placeholder="Example: alex@example.com" required>
                 </div>
             </fieldset>
+
             <fieldset>
-                <legend>F3 · Request choices</legend>
-                <p class="help">Use an appropriate radio, checkbox, or select structure for the task.</p>
-                <label class="choice">
-                        <input type="radio" name="request_type" value="option-a"> Replace with option A</label>
-                <label class="choice"><input type="radio" name="request_type" value="option-b"> Replace with option B</label>
+                <legend>F3 · Volunteer Preferences</legend>
+
+                <div class="field">
+                    <label for="event_date">
+                Preferred event date (required)
+            </label>
+                    <p class="help" id="date-help">
+                        Choose a date between November 1 and November 30, 2026.
+                    </p>
+                    <input type="date" id="event_date" name="event_date" min="2026-11-01" max="2026-11-30" aria-describedby="date-help" required>
+                </div>
+
+                <div class="field">
+                    <label for="activity">
+                Volunteer activity (required)
+            </label>
+                    <select id="activity" name="activity" required>
+                <option value="">Choose an activity</option>
+                <option value="setup">Event setup</option>
+                <option value="cleanup">Event cleanup</option>
+                <option value="registration">
+                    Registration assistance
+                </option>
+            </select>
+                </div>
+
+                <fieldset>
+                    <legend>Preferred shift (required)</legend>
+
+                    <label class="choice">
+                <input type="radio" name="shift"
+                       value="morning" required>
+                Morning
+            </label>
+
+                    <label class="choice">
+                <input type="radio" name="shift"
+                       value="afternoon">
+                Afternoon
+            </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Previous volunteer experience (required)</legend>
+
+                    <label class="choice">
+                <input type="radio" name="experience"
+                       value="yes" required>
+                Yes
+            </label>
+
+                    <label class="choice">
+                <input type="radio" name="experience"
+                       value="no">
+                No
+            </label>
+                </fieldset>
+
+                <div class="field">
+                    <label for="hours">
+                Hours available (required)
+            </label>
+                    <p class="help" id="hours-help">
+                        Enter a whole number between 1 and 8.
+                    </p>
+                    <input type="number" id="hours" name="hours" min="1" max="8" step="1" aria-describedby="hours-help" required>
+                </div>
+
+                <fieldset>
+                    <legend>Areas of interest (optional)</legend>
+
+                    <label class="choice">
+                <input type="checkbox" name="interests"
+                       value="outdoors">
+                Outdoor activities
+            </label>
+
+                    <label class="choice">
+                <input type="checkbox" name="interests"
+                       value="organizing">
+                Organizing supplies
+            </label>
+
+                    <label class="choice">
+                <input type="checkbox" name="interests"
+                       value="helping">
+                Helping participants
+            </label>
+                </fieldset>
+
+                <div class="field">
+                    <label for="comments">
+                Additional comments (optional)
+            </label>
+                    <p class="help" id="comments-help">
+                        Share relevant scheduling information. Maximum 240 characters. Do not include sensitive details.
+                    </p>
+                    <textarea id="comments" name="comments" rows="4" maxlength="240" aria-describedby="comments-help"></textarea>
+                </div>
+
+                <div class="field">
+                    <label class="choice">
+                <input type="checkbox" name="guidelines"
+                       value="agreed" required>
+                I have reviewed the fictional event
+                guidelines (required).
+            </label>
+                </div>
             </fieldset>
-            <div class="field">
-                <label for="details">Request details</label>
-                <p class="help" id="details-help">Explain the expected content and any limit before entry.</p>
-                <textarea id="details" name="details" aria-describedby="details-help"></textarea>
-            </div>
-            <button type="submit">Replace with a specific action</button>
+
+            <button type="submit">
+        Submit Volunteer Registration
+    </button>
+
         </form>
+
         <section id="states">
             <h2>F5 · State and Recovery Specimen</h2>
             <p>Document default, focus, required, valid, invalid, disabled, and a static server-returned error. Keep this section separate from the primary blank form when necessary to avoid misleading users.</p>
